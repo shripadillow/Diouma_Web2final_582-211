@@ -5,7 +5,10 @@
     --blue: #0146C8;
     --light-blue:#6198FF;
     --dark-gray: #1A1A1A;
+    --light-gray:#D9D9D9;
     --black: #000;
+    --lilita-one: 'Lilita One', sans-serif;
+    --montserrat: 'Montserrat', sans-serif;
     
 }
 
@@ -15,8 +18,28 @@
 # SECTION: Styles généraux
 -------------------------------------------------------------------------------------*/
 
-h1, h2 {
-    font-family: var(--titles);
+body {
+    font-family: var(--montserrat);
+    color: var(--white);
+}
+
+
+h1, h2,h3 {
+    font-family: var(--lilita-one);
+}
+
+a {
+    font-family: var(--lilita-one);
+    color: var(--light-gray)
+}
+
+a:hover {
+    color:var(--white)
+}
+
+img {
+    width: 354px;
+    height: auto;
 }
 
 /*-------------------------------------------------------------------------------------
