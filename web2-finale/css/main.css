@@ -12,6 +12,9 @@
     
 }
 
+html {
+    overflow: hidden;
+}
 
 
 /*-------------------------------------------------------------------------------------
@@ -23,28 +26,127 @@ body {
     color: var(--white);
 }
 
-
+/*Titres principales de la page qui seront dans la fonte donner*/
 h1, h2,h3 {
     font-family: var(--lilita-one);
 }
 
-a {
-    font-family: var(--lilita-one);
-    color: var(--light-gray)
+h1 {
+    font-size: 64px;
 }
 
-a:hover {
-    color:var(--white)
+p {
+    font-size: 20px;
+
 }
 
-img {
-    width: 354px;
-    height: auto;
+
+
+ul {
+    list-style-type: none;
+    text-align: center;
 }
+
+
+
+
+
 
 /*-------------------------------------------------------------------------------------
 # SECTION: En-tête
 -------------------------------------------------------------------------------------*/
+
+/*utiliser pour centrer les element du header avec un flex et les aligner les elements sur une lines. J'utilise cela aussi sur les contenu comme les icones et les bouttons de nav.*/
+header {
+    background-color: var(--dark-gray);
+    width: 100vw;
+    height: 114px;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 225px;
+    height: 86px;
+    flex-shrink: 0;
+    justify-self: flex-start;
+    margin: 20px;
+    
+}
+
+
+.header-nav.mobile {
+
+    justify-content: flex-end;
+}
+
+.header-nav {
+    display: flex;
+    padding-left: 92px;
+    justify-content: center;
+    align-items: center;
+    gap: 101.5px;
+}
+
+
+.icon-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1.1em;
+
+
+}
+
+
+/**/
+a .header-icon {
+    width: 1.6em;
+    aspect-ratio: 1/1;
+    border-style: solid;
+    border-radius: 10%;
+    padding: 10px;
+
+}
+
+.nav-language {
+    margin-left: -30px;
+    align-self: flex-end;
+}
+
+/*couleur de styles des bouttons de nav. Ainsi qu'une transition qui change la couleur*/
+a {
+    font-family: var(--lilita-one);
+    color: var(--light-gray);
+    font-size: 1.3em;
+    transition-duration: 0.5s;
+    
+}
+
+/*Change la couleur des bouttons de navigation*/
+a:hover {
+    color:var(--white)
+}
+
+
+.desktop {
+    display: none;
+}
+
+
+
+
+
+
+
+
 
 /*-------------------------------------------------------------------------------------
 # SECTION: Main
@@ -52,8 +154,73 @@ img {
 
 /*-------------------------------------------------------------------------------------
 # SECTION: Héro
+-------------------------------------------------------------------------------------*
+
+
+
+--------------
+# SECTION: Footer
 -------------------------------------------------------------------------------------*/
+
+.icon-nav.mobile {
+
+    justify-content: center;
+    margin-left: 20%;
+    margin-bottom: 5vh;
+}
+
+
+footer {
+    background-color: var(--dark-gray);
+    width:100vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+.icon-list {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 36px;
+}
+
+.icon {
+    width: 48px;
+}
+.copyright {
+    margin-left:80px;
+    padding-top: 70px;
+}
 
 /*-------------------------------------------------------------------------------------
 # MEDIA QUERIES
 -------------------------------------------------------------------------------------*/
+
+/*juste por me rendre a vie moin compliquer, j'ai deja ajouter du style pour les ecrans plus grand*/
+@media screen and (min-width: 778px) {
+
+
+    header {
+        justify-content: flex-start;
+        height: 141px;
+
+    }
+
+    .desktop {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .mobile {
+        display: none;
+    }
+    
+
+
+
+}
