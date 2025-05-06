@@ -87,6 +87,7 @@ header {
     justify-content: flex-end;
 }
 
+/*La majorite des styles [commes les ancres] sont pour la version desktop. Explication dans la ligne 138*/
 .header-nav {
     display: flex;
     padding-left: 92px;
@@ -106,7 +107,6 @@ header {
 }
 
 
-/**/
 a .header-icon {
     width: 1.6em;
     aspect-ratio: 1/1;
@@ -122,7 +122,7 @@ a .header-icon {
 }
 
 /*couleur de styles des bouttons de nav. Ainsi qu'une transition qui change la couleur*/
-a {
+.nav-element, .nav-language {
     font-family: var(--lilita-one);
     color: var(--light-gray);
     font-size: 1.3em;
@@ -135,7 +135,7 @@ a:hover {
     color:var(--white)
 }
 
-
+/*Pour faciliter la vie, j'ai fait deux classe pour la version mobile et desktop. Toutes element dans la classe desktop sera casher  lessant qur les element present dans la version mobile du header. */
 .desktop {
     display: none;
 }
@@ -169,7 +169,7 @@ a:hover {
     margin-bottom: 5vh;
 }
 
-
+/*centre et aligne les icones avec un flex*/
 footer {
     background-color: var(--dark-gray);
     width:100vw;
