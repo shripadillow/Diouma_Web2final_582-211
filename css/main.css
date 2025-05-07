@@ -47,14 +47,10 @@ ul {
     text-align: center;
 }
 
-/*container qui se met sur toute la page */
-.container {
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 22px;
-}
 
+a {
+    text-decoration: none;
+}
 
 
 
@@ -64,40 +60,50 @@ ul {
 # SECTION: En-tête
 -------------------------------------------------------------------------------------*/
 
-/*utiliser pour centrer les element du header avec un flex et les aligner les elements sur une lines. J'utilise cela aussi sur les contenu comme les icones et les bouttons de nav.*/
+
 header {
     background-color: var(--dark-gray);
     width: 100vw;
     height: 114px;
-    display: flex;
-    justify-content: space-between;
-
 }
 
+/*.header {
 
-.header {
-    display: flex;
-    align-items: center;
+    position:fixed;
+    top: 0;
+    left: 0;
+
 }
+^ fait en sorte que le header soit toujour en haut de l'écran*/
 
+
+/*utiliser pour centrer les element du header avec un flex et les aligner les elements sur une line. J'utilise cela aussi sur les contenu comme les icones et les bouttons de nav.*/
 .header-container {
-    max-width: 1440px;
-    margin:0 auto;
-    border: 1px solid red;
+    width: 100%;
+
+    display:flex;
+    justify-content: space-around;
+    padding:15px 50px;
 }
 
 .logo {
-    width: 225px;
+    display:inline-block;
+    width: auto;
     height: auto;
-    flex-shrink: 0;
-    justify-self: flex-start;
     margin: 20px;
-    
+    justify-content: flex-start;
+    flex-shrink: 0;
+    flex-grow: 0;
 }
 
+.logo-image {
+    min-width: 225px;
+    max-width: 290px;
+    height: auto;
+}
 
-.header-nav.mobile {
-
+.burger {
+    display:flex;
     justify-content: flex-end;
 }
 
@@ -105,33 +111,52 @@ header {
 .header-nav {
     display: flex;
     padding-left: 92px;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-start;
+    align-self: center;
     gap: 101.5px;
+
+
 }
 
 
-.icon-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+.external-link {
+    align-self: center;
     gap: 1.1em;
 
 
 }
 
 
-a .header-icon {
-    width: 1.6em;
+.header-icon {
+    width: 58px;
     aspect-ratio: 1/1;
+
     border-style: solid;
     border-radius: 10%;
     padding: 10px;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
+.header-img {
+    width: 44px;
+
+}
+.nav-element {
+    font-size: 40px;
+    font-weight: 400;
+
+    
+    
+}
+
+
 .nav-language {
-    margin-left: -30px;
+    font-size: 38px;
     align-self: flex-end;
 }
 
@@ -139,7 +164,6 @@ a .header-icon {
 .nav-element, .nav-language {
     font-family: var(--lilita-one);
     color: var(--light-gray);
-    font-size: 40px;
     transition-duration: 0.5s;
     
 }
@@ -177,12 +201,7 @@ a .header-icon {
 # SECTION: Footer
 -------------------------------------------------------------------------------------*/
 
-.icon-nav.mobile {
 
-    justify-content: center;
-    margin-left: 20%;
-    margin-bottom: 5vh;
-}
 
 /*centre et aligne les icones avec un flex*/
 footer {
@@ -190,10 +209,16 @@ footer {
     width:100vw;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
+.external-link .mobile {
+    display: flex;
+    justify-content: center;
 
+}
 .icon-list {
     display: flex;
     justify-content: center;
@@ -215,7 +240,7 @@ footer {
 /*-------------------------------------------------------------------------------------
 # MEDIA QUERIES
 -------------------------------------------------------------------------------------*/
-/*
+
 @media screen and (min-width: 778px) {
 
 
@@ -238,4 +263,3 @@ footer {
 
 
 }
-*/
