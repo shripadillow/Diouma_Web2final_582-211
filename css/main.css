@@ -47,6 +47,14 @@ ul {
     text-align: center;
 }
 
+/*container qui se met sur toute la page */
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 22px;
+}
+
 
 
 
@@ -62,7 +70,7 @@ header {
     width: 100vw;
     height: 114px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 
 }
 
@@ -72,9 +80,15 @@ header {
     align-items: center;
 }
 
+.header-container {
+    max-width: 1440px;
+    margin:0 auto;
+    border: 1px solid red;
+}
+
 .logo {
     width: 225px;
-    height: 86px;
+    height: auto;
     flex-shrink: 0;
     justify-self: flex-start;
     margin: 20px;
@@ -125,13 +139,14 @@ a .header-icon {
 .nav-element, .nav-language {
     font-family: var(--lilita-one);
     color: var(--light-gray);
-    font-size: 1.3em;
+    font-size: 40px;
     transition-duration: 0.5s;
     
 }
 
 /*Change la couleur des bouttons de navigation*/
-a:hover {
+.nav-element:hover,
+.nav-language:hover {
     color:var(--white)
 }
 
@@ -200,7 +215,7 @@ footer {
 /*-------------------------------------------------------------------------------------
 # MEDIA QUERIES
 -------------------------------------------------------------------------------------*/
-
+/*
 @media screen and (min-width: 778px) {
 
 
@@ -223,3 +238,4 @@ footer {
 
 
 }
+*/
