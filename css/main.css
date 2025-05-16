@@ -17,8 +17,9 @@
 }
 
 html {
-    overflow: hidden;
+    overflow-x: hidden;
 }
+
 
 
 /*-------------------------------------------------------------------------------------
@@ -199,6 +200,10 @@ header {
 }
 
 
+.header-nav {
+    
+}
+
 
 
 
@@ -222,7 +227,7 @@ label#menu-hamburger {
 
 
 /*-------------------------------------------------------------------------------------
-# SECTION: Héro
+# SECTION: Héro (seulement page acceuil)
 -------------------------------------------------------------------------------------*/
 
 
@@ -233,7 +238,7 @@ label#menu-hamburger {
     background-size: cover;
 
     width: 100%;
-    max-height: 100%;
+    min-height: 120vh;
 }
 
 .the-signal {
@@ -299,6 +304,7 @@ footer {
 
 .icon {
     width: 48px;
+    cursor: pointer;
 }
 
 
