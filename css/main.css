@@ -38,11 +38,11 @@ h1, h2,h3 {
 
 h1 {
     font-size: 64px;
+
 }
 
 p {
     font-size: 20px;
-
 }
 
 
@@ -99,6 +99,10 @@ header {
 
 }
 ^ fait en sorte que le header soit toujour en haut de l'écran*/
+#form1 {
+    display:flex;
+    justify-content: flex-end;
+}
 
 
 /*utiliser pour centrer les element du header avec un flex et les aligner les elements sur une line. J'utilise cela aussi sur les contenu comme les icones et les bouttons de nav.*/
@@ -106,6 +110,7 @@ header {
 
 .header.container {
     position:relative;
+
 
     display:flex;
     justify-content: flex-start;
@@ -115,13 +120,19 @@ header {
     
 }
 
+.header.nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+
 .logo {
     display:inline-block;
     width: auto;
     height: auto;
     justify-content: flex-start;
     flex-grow: 1;
-    padding-right: 92px;
+    padding-right: 15px;
     
 }
 
@@ -148,6 +159,10 @@ header {
 
 }
 
+.header-nav.mobile {
+    flex-grow: 0;
+    align-self: center;
+}
 
 .header-icon {
     width: 57px;
@@ -200,9 +215,6 @@ header {
 }
 
 
-.header-nav {
-    
-}
 
 
 
@@ -239,10 +251,14 @@ label#menu-hamburger {
 
     width: 100%;
     min-height: 120vh;
+    position: relative;
 }
 
-.the-signal {
-    margin: 0;
+.signal-text {
+
+    display: none;
+
+
 }
 
 
@@ -256,12 +272,7 @@ label#menu-hamburger {
 /*-------------------------------------------------------------------------------------
 # SECTION: Main
 -------------------------------------------------------------------------------------*/
-.main {
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
+
 
 
 
@@ -311,29 +322,38 @@ footer {
 /*-------------------------------------------------------------------------------------
 # MEDIA QUERIES
 -------------------------------------------------------------------------------------*/
+#form1 {
+    flex-grow: 2;
+}
 
-@media screen and (min-width: 778px) {
-
-    .header-nav.desktop {
-        display: flex;
-    
-        justify-content: flex-end;
-        align-items: flex-start;
-        align-self: center;
-        gap: 101.5px;
-    
-    
-    }
-
-
-    .desktop {
-        display: flex;
-        justify-content: flex-start;
-    }
-
+@media screen and (min-width: 1012px) {
     .mobile {
         display: none;
     }
+
+
+
+
+    .header-nav {
+        display: flex;
+    
+        justify-content: space-between;
+        align-items: flex-start;
+        align-self: center;
+        flex-grow: 3;
+        gap: 10px;
+    
+    }
+    .header-nav.mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: flex;
+        justify-content: space-between;
+    }
+
+
     
 
 
