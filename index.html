@@ -14,55 +14,57 @@
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-    <header class="header">
-        <div class="header-container">
+    <header>
+        <div class="header container">
             <a href="#" class="logo">
                 <img src="./assets/image/logo3-e1691552195689.png" class="logo-image" alt="logo goosebyte">
             </a>
+            <form id="form1">
+                <div class="header-nav mobile">
+                    <input type="checkbox" name="burger" id="burger">
 
-            <div class="header-nav mobile">
-                <input type="checkbox" name="burger" id="burger">
-
-                <label for="burger" id="menu-burger">
-                    <img src="./assets/image/icon_menu.png">
-                </label>
-            </div>
-
-            <div class="header-nav desktop">
-                <ul class="header-nav desktop">
-                        <li> <a class="nav-element" href="#"> Acceuil </a> </li>
-                        <li> <a class="nav-element" href="#"> Le studio </a> </li>
-                        <li> <a class="nav-element" href="#"> Presse</a> </li>
-                        <li> <a class="nav-element" href="#"> Carrière </a> </li>  
-                </ul>
-
-                <div class="external-link desktop">
-                    <a href="#" class="header-icon no1">
-                        <img src="./assets/image/logo_discord.png" alt="boutton discord" class="header-img">
-                    </a>
-
-                    <a href="#" class="header-icon no2" >
-                        <img src="./assets/image/logo_steam.png" alt="button steam" class="header-img">
-                    </a>
-
-                    <a class="nav-language"> Fr </a>
+                    <label for="burger" id="menu-burger">
+                        <img src="./assets/image/icon_menu.png">
+                    </label>
                 </div>
-            </div>
+                <nav class="header-nav desktop" id ="menu">
+                    <ul class="header-nav desktop">
+                            <li> <a class="nav-element" href="#">Acceuil</a> </li>
+                            <li> <a class="nav-element" href="#">Le&nbsp;studio</a> </li>
+                            <li> <a class="nav-element" href="#">Presse</a> </li>
+                            <li> <a class="nav-element" href="#">Carrière</a> </li>  
+                    </ul>
+
+                    <div class="external-link desktop">
+                        <a href="#" class="header-icon no1">
+                            <img src="./assets/image/logo_discord.png" alt="boutton discord" class="header-img">
+                        </a>
+
+                        <a href="#" class="header-icon no2" >
+                            <img src="./assets/image/logo_steam.png" alt="button steam" class="header-img">
+                        </a>
+
+                        <a class="nav-language"> Fr </a>
+                    </div>
+                </nav>
+            </form>
         </div>
     </header>
 
 
     <!-- MAIN PAGE-->
-     <main class="main">
-        <div class="main-container">
-            <section class="hero">
-                <p class="signal-text">
-                    <h3 class="the-signal">The Signal</h3>
-                    Découvrez les mystères d’une planète extraterrestre dans ce jeu de survie et de construction en monde ouvert. Fouillez, construisez, extrayez et survivez dans un système de biomes complexe et interconnecté, tout en dévoilant les véritables intentions de cette planète sensible – et pourquoi elle vous a amené ici.
+     <main>
+        <section class="hero">
+            <p class="signal-text">
+                <h3 class="the-signal">The Signal</h3>
+                Découvrez les mystères d’une planète extraterrestre dans ce jeu de survie et de construction en monde ouvert. Fouillez, construisez, extrayez et survivez dans un système de biomes complexe et interconnecté, tout en dévoilant les véritables intentions de cette planète sensible – et pourquoi elle vous a amené ici.
 
-                </p>
-                
-            </section>
+            </p>
+            
+        </section>
+
+        <div class="main container">
+
 
 
             
@@ -70,23 +72,38 @@
      </main>
 
 
-    <footer class="footer">
-        <div class="icon-list">
-            <ul>
-                <div class="external-link mobile">
-                    <li> <a><img class="header-icon no1" src="./assets/image/logo_discord.png"></a></li>
-                </li> <a><img class="header-icon no2" src="./assets/image/logo_steam.png"><a></li>
-                </div>
+    <footer>
+        <div class="footer container">
+            <div class="icon-list">
+                <ul>
+                    <div class="external-link mobile">
+                        <li> <a href="#" class="header-icon no1"><img src="./assets/image/logo_discord.png" class="header-img"></a></li>
+                    </li> <a href="#" class="header-icon no2">
+                        <img  src="./assets/image/logo_steam.png" class="header-img"></a></li>
+                    </div>
 
-                <div class="footer-icons">
-                    <li> <a><img class="icon" src="./assets/image/logo_facebook.png"></a></li>
-                    <li> <a><img class="icon" src="./assets/image/logo_insta.png"></a></li>
-                    <li> <a><img class="icon" src="./assets/image/logo_twitterX.png"></a></li>
-                    <li> <a><img class="icon" src="./assets/image/logo_linkIn.png"></a></li>
-                </div>
-            </ul>
+                    <div class="footer-icons">
+                        <li> <a>
+                            <img class="icon" src="./assets/image/logo_facebook.png">
+                        </a></li>
+
+                        <li> 
+                            <a>
+                                <img class="icon" src="./assets/image/logo_insta.png"></a>
+                            </li>
+                        <li> 
+                            <a>
+                                <img class="icon" src="./assets/image/logo_twitterX.png"></a>
+                            </li>
+                        <li> 
+                            <a>
+                                <img class="icon" src="./assets/image/logo_linkIn.png"></a>
+                            </li>
+                    </div>
+                </ul>
+            </div>
+            <p> <small class="copyright">Copyright © 2023 Goose Byte Studios Inc. All rights reserved.</small></p>
         </div>
-        <p> <small class="copyright">Copyright © 2023 Goose Byte Studios Inc. All rights reserved.</small></p>
     </footer>
 
 </body>

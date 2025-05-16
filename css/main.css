@@ -12,6 +12,10 @@
     
 }
 
+* {
+    box-sizing: border-box;
+}
+
 html {
     overflow: hidden;
 }
@@ -45,6 +49,11 @@ p {
 ul {
     list-style-type: none;
     text-align: center;
+    padding: 0;
+}
+
+li {
+    padding: 0
 }
 
 
@@ -53,6 +62,20 @@ a {
 }
 
 
+
+.container {
+    width: 100vw;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+}
+
+
+/*Pour faciliter la vie, j'ai fait deux classe pour la version mobile et desktop. Toutes element dans la classe desktop sera casher  lessant qur les element present dans la version mobile du header. */
+.desktop {
+    display: none;
+}
 
 
 
@@ -65,7 +88,6 @@ header {
     background-color: var(--dark-gray);
     width: 100vw;
 
-    position:fixed;
 }
 
 /*.header {
@@ -79,14 +101,17 @@ header {
 
 
 /*utiliser pour centrer les element du header avec un flex et les aligner les elements sur une line. J'utilise cela aussi sur les contenu comme les icones et les bouttons de nav.*/
-.header-container {
-    width: 100%;
-    height: 114px;
+
+
+.header.container {
     position:relative;
 
     display:flex;
-    justify-content: space-around;
+    justify-content: flex-start;
+    align-items: center;
     padding:15px 50px;
+
+    
 }
 
 .logo {
@@ -94,14 +119,13 @@ header {
     width: auto;
     height: auto;
     justify-content: flex-start;
-    flex-shrink: 0;
-    flex-grow: 0;
+    flex-grow: 1;
+    padding-right: 92px;
     
 }
 
 .logo-image {
-    min-width: 225px;
-    max-width: 290px;
+    width: 225px;
     height: auto;
 }
 
@@ -111,38 +135,22 @@ header {
 }
 
 /*La majorite des styles [commes les ancres] sont pour la version desktop. Explication dans la ligne 138*/
-.header-nav {
-    display: flex;
-    padding-left: 92px;
-    justify-content: flex-end;
-    align-items: flex-start;
-    align-self: center;
-    gap: 101.5px;
 
-
-}
-
-/*masquage de la checkbox du menu responsive*/
-input[type = "checkbox"]#burger {
-    display: none;
-}
-
-/*NOTE: AJOUT DU MENU PLUS TARD*/
-label#menu-hamburger {
-    display: none;
-}
 
 .external-link {
     align-self: center;
     gap: 1.1em;
-    padding:1rem
+    padding:1rem;
+
+    
 
 
 }
 
 
 .header-icon {
-    width: 58px;
+    width: 57px;
+    box-sizing: content-box;
     aspect-ratio: 1/1;
 
     border-style: solid;
@@ -152,17 +160,18 @@ label#menu-hamburger {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    min-height: 0;
     cursor:pointer;
 
 }
 
 .header-img {
-    width: 44px;
+    max-width: 61px;
 
 }
+
 .nav-element {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 400;
 
     
@@ -189,10 +198,28 @@ label#menu-hamburger {
     color:var(--white)
 }
 
-/*Pour faciliter la vie, j'ai fait deux classe pour la version mobile et desktop. Toutes element dans la classe desktop sera casher  lessant qur les element present dans la version mobile du header. */
-.desktop {
+
+
+
+
+/*-------------------------------------------------------------------------------------
+CSS POUR MENU BURGER
+----------------------------------------------------------------------------------------*/
+
+/*masquage de la checkbox du menu responsive*/
+input[type = "checkbox"]#burger {
     display: none;
 }
+
+/*NOTE: AJOUT DU MENU PLUS TARD*/
+label#menu-hamburger {
+    display: none;
+}
+
+
+
+
+
 
 /*-------------------------------------------------------------------------------------
 # SECTION: Héro
@@ -224,7 +251,12 @@ label#menu-hamburger {
 /*-------------------------------------------------------------------------------------
 # SECTION: Main
 -------------------------------------------------------------------------------------*/
-
+.main {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
 
 
 
@@ -238,6 +270,10 @@ label#menu-hamburger {
 footer {
     background-color: var(--dark-gray);
     width:100vw;
+
+}
+
+.footer.container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -248,6 +284,7 @@ footer {
 .external-link.mobile {
     display: flex;
     justify-content: center;
+
 
 }
 .icon-list {
@@ -263,23 +300,25 @@ footer {
 .icon {
     width: 48px;
 }
-.copyright {
-    margin-left:80px;
-    padding-top: 70px;
-}
+
 
 /*-------------------------------------------------------------------------------------
 # MEDIA QUERIES
 -------------------------------------------------------------------------------------*/
 
-/* @media screen and (min-width: 778px) {
+@media screen and (min-width: 778px) {
 
-
-    header {
-        justify-content: flex-start;
-        height: 141px;
-
+    .header-nav.desktop {
+        display: flex;
+    
+        justify-content: flex-end;
+        align-items: flex-start;
+        align-self: center;
+        gap: 101.5px;
+    
+    
     }
+
 
     .desktop {
         display: flex;
@@ -295,4 +334,3 @@ footer {
 
 }
 
-*/
