@@ -7,6 +7,7 @@
     --dark-gray: #1A1A1A;
     --light-gray:#D9D9D9;
     --black: #000;
+    --gray: #303030;
     --lilita-one: 'Lilita One', sans-serif;
     --montserrat: 'Montserrat', sans-serif;
     
@@ -60,6 +61,7 @@ li {
 
 a {
     text-decoration: none;
+    font-size: 40px;
 }
 
 
@@ -70,6 +72,18 @@ a {
     margin: 0 auto;
     padding: 0 1rem;
 
+}
+
+/*Style pour les images et le iframe, je le separe en class pour ne pas inclure le logo*/
+.img, .video {
+    border: 3px solid var(--white);
+    border-radius: 20px;
+
+    width: 348px;
+    height: auto;
+    margin: 0 2em;
+
+    
 }
 
 
@@ -91,14 +105,15 @@ header {
 
 }
 
-/*.header {
+header {
 
     position:fixed;
     top: 0;
     left: 0;
-
+    z-index: 1;
 }
-^ fait en sorte que le header soit toujour en haut de l'écran*/
+
+/*^ fait en sorte que le header soit toujour en haut de l'écran*/
 #form1 {
     display:flex;
     justify-content: flex-end;
@@ -146,7 +161,7 @@ header {
     justify-content: flex-end;
 }
 
-/*La majorite des styles [commes les ancres] sont pour la version desktop. Explication dans la ligne 138*/
+/*La majorite des styles [commes les ancres] sont pour la version desktop.*/
 
 
 .external-link {
@@ -186,13 +201,6 @@ header {
 
 }
 
-.nav-element {
-    font-size: 30px;
-    font-weight: 400;
-
-    
-    
-}
 
 
 .nav-language {
@@ -228,10 +236,36 @@ input[type = "checkbox"]#burger {
     display: none;
 }
 
-/*NOTE: AJOUT DU MENU PLUS TARD*/
-label#menu-hamburger {
-    display: none;
+label#menu-burger {
+    color:var(--dark-gray);
+    font-size: 40px;
+    cursor: pointer;
 }
+label#menu-burger:hover  {
+    transition: color 1s;
+    color:var(--white);
+}
+
+.header-nav #menu ul {
+    width: 100%;
+    background-color: var(--black);
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: center;
+    transform: translateX(100%)
+
+}
+
+#form1 input[type="checkbox"]:checked ~ #menu ul  {
+    transform: translate(0%);
+    transition: transform 1s;
+}
+
+/*note: je n'ai aucune idée pourquoi le menu ne fonctionne pas désolé T_T*/
 
 
 
@@ -243,22 +277,33 @@ label#menu-hamburger {
 -------------------------------------------------------------------------------------*/
 
 
-
 .hero {
     background-image: url("../assets/image/banner.webp");
     background-repeat: no-repeat;
     background-size: cover;
 
-    width: 100%;
-    min-height: 120vh;
+    width: 110vw;
+    min-height: 100vh;
+    max-height: 100vh;
     position: relative;
 }
 
+
+/*mettre le text en bas du hero*/
+
 .signal-text {
 
-    display: none;
+    position: absolute;
 
+    width: 350px;
+    max-width: 1000px ;
+    min-width: 0;
+    bottom: 0;
+    padding: 10px;
+}
 
+.signal-text p {
+    font-size: 1em;
 }
 
 
@@ -273,8 +318,69 @@ label#menu-hamburger {
 # SECTION: Main
 -------------------------------------------------------------------------------------*/
 
+/*Style pour la majorité des section. Je met toutes les sections dans une class section, puis je les met dans une AUTRE class (.apropos, .details et .gallerie pour l'acceuil)
+je met un display flex pour to*/
+.section {
+    text-align: center;
+    width: 100vw;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    
+}
+
+.section p, .section h1 {
+    margin-top: 0;
+    margin-bottom: 2em;
+}
+
+.apropos {
+    background-color: var(--gray);
+    padding:10px 0;
+}
+
+.video {
+    width:359px;
+    min-height: 242px;
+}
 
 
+/*MENU CARROUSELLE POUR LA SECTION DETAIL ET LA SECTION GALLERIE*/
+.detail , .gallerie .caroussel {
+    overflow-x: scroll;
+    padding: 0 2rem;
+
+    display: flex;
+    flex-direction: row;
+
+}
+.caroussel {
+    width: 100vw;
+}
+
+
+
+.detail {
+    background-color: var(--lime-green);
+}
+
+.gallerie {
+    background-color: var(--pink);
+}
+
+
+.gallerie .caroussel {
+
+    padding-top:100px;
+}
+
+.gallerie .img {
+    width: 400px;
+}
 
 /*-------------------------------------------------------------------------------------
 # SECTION: Footer
@@ -332,16 +438,23 @@ footer {
     }
 
 
+    /*-----------------------------------------------------------------------------------
+    # SECTION: HEADER
+    -------------------------------------------------------------------------------------*/
+
 
 
     .header-nav {
+        background-color:var(--dark-gray);
         display: flex;
+        flex-direction: row;
     
         justify-content: space-between;
         align-items: flex-start;
         align-self: center;
         flex-grow: 3;
         gap: 10px;
+        transform:translate(0%);
     
     }
     .header-nav.mobile {
@@ -354,7 +467,15 @@ footer {
     }
 
 
+    /*-------------------------------------------------------------------------------------
+    # SECTION: Héro (seulement page acceuil)
+    -------------------------------------------------------------------------------------*/
+
+    .signal-text  {
+        display: block;
     
+    }
+
 
 
 
