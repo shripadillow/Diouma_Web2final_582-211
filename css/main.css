@@ -21,6 +21,22 @@ html {
     overflow-x: hidden;
 }
 
+/*keyframes pour l'animation du logo dans la section studio*/
+@keyframes rotation {
+    0%,100% {transform: rotate(0deg)}
+    0% {opacity:1}
+    25% {transform:rotate(90deg)}
+    50% {transform: rotate(180deg)}
+    75% {transform: rotate(360deg) translatey(20%)}
+    100% {transform: translateY(200%)}
+
+
+    25% {opacity:1}
+    50% {opacity:1}
+    75% {opacity:1}
+    100% {display:none;}
+}
+
 
 
 /*-------------------------------------------------------------------------------------
@@ -35,6 +51,7 @@ body {
 /*Titres principales de la page qui seront dans la fonte donner*/
 h1, h2,h3 {
     font-family: var(--lilita-one);
+    
 }
 
 h1 {
@@ -94,6 +111,8 @@ a {
 
 
 
+
+
 /*-------------------------------------------------------------------------------------
 # SECTION: En-tête
 -------------------------------------------------------------------------------------*/
@@ -117,7 +136,9 @@ header {
 #form1 {
     display:flex;
     justify-content: flex-end;
+    flex-grow: 2;
 }
+
 
 
 /*utiliser pour centrer les element du header avec un flex et les aligner les elements sur une line. J'utilise cela aussi sur les contenu comme les icones et les bouttons de nav.*/
@@ -216,11 +237,21 @@ header {
     
 }
 
+
+
+
 /*Change la couleur des bouttons de navigation*/
 .nav-element:hover,
 .nav-language:hover {
     color:var(--white)
 }
+
+
+/*La couleur des bouttons du header changent dépendament d'ou l'utilisateur est dans le site*/
+.site-choisi {
+    color:var(--light-blue)
+}
+
 
 
 
@@ -262,7 +293,7 @@ label#menu-burger:hover  {
 
 #form1 input[type="checkbox"]:checked ~ #menu ul  {
     transform: translate(0%);
-    transition: transform 1s;
+    transition: transform 3s;
 }
 
 /*note: je n'ai aucune idée pourquoi le menu ne fonctionne pas désolé T_T*/
@@ -315,9 +346,8 @@ label#menu-burger:hover  {
 
 
 /*-------------------------------------------------------------------------------------
-# SECTION: Main
+# SECTION: MAIN
 -------------------------------------------------------------------------------------*/
-
 /*Style pour la majorité des section. Je met toutes les sections dans une class section, puis je les met dans une AUTRE class (.apropos, .details et .gallerie pour l'acceuil)
 je met un display flex pour to*/
 .section {
@@ -382,6 +412,36 @@ je met un display flex pour to*/
     width: 400px;
 }
 
+
+/*------------------------------------------------------------------------------------------------
+# SECTION:  (STUDIO)
+------------------------------------------------------------------------------------------------*/
+
+.main-studio {
+    background-color: var(--lime-green);
+    color: var(--blue);
+
+    width: 100vw;
+    font-weight: bold;
+}
+
+.studio {
+    padding-top: 20em;
+}
+.studio h1 {
+    margin-top:100px;
+}
+
+.studio-logo {
+    cursor: pointer;
+}
+
+.studio-logo:hover {
+    animation: rotation 2s ease;
+    animation-fill-mode: forwards;
+}
+
+
 /*-------------------------------------------------------------------------------------
 # SECTION: Footer
 -------------------------------------------------------------------------------------*/
@@ -428,9 +488,7 @@ footer {
 /*-------------------------------------------------------------------------------------
 # MEDIA QUERIES
 -------------------------------------------------------------------------------------*/
-#form1 {
-    flex-grow: 2;
-}
+
 
 @media screen and (min-width: 1012px) {
     .mobile {
@@ -442,7 +500,9 @@ footer {
     # SECTION: HEADER
     -------------------------------------------------------------------------------------*/
 
-
+    .logo-image {
+        width: 290px;
+    }
 
     .header-nav {
         background-color:var(--dark-gray);
