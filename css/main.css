@@ -51,6 +51,7 @@ body {
 /*Titres principales de la page qui seront dans la fonte donner*/
 h1, h2,h3 {
     font-family: var(--lilita-one);
+    font-weight: unset;
     
 }
 
@@ -122,6 +123,7 @@ header {
     background-color: var(--dark-gray);
     width: 100vw;
 
+
 }
 
 header {
@@ -146,7 +148,7 @@ header {
 
 .header.container {
     position:relative;
-
+    max-height: 141px;
 
     display:flex;
     justify-content: flex-start;
@@ -206,6 +208,7 @@ header {
     aspect-ratio: 1/1;
 
     border-style: solid;
+    border-color: var(--pink);
     border-radius: 10%;
     padding: 10px;
 
@@ -214,7 +217,19 @@ header {
     justify-content: center;
     min-height: 0;
     cursor:pointer;
+    transition-duration: 0.5s;
 
+}
+
+.header-icon:hover {
+    transform: scale(1.2);
+}
+
+.header-icon.no1 {
+    background-color: var(--lime-green);
+}
+.header-icon.no2 {
+    background-color: var(--blue)
 }
 
 .header-img {
@@ -335,6 +350,7 @@ label#menu-burger:hover  {
 
 .signal-text p {
     font-size: 1em;
+    font-weight: bold;
 }
 
 
@@ -364,13 +380,16 @@ je met un display flex pour to*/
 }
 
 .section p, .section h1 {
-    margin-top: 0;
+    margin-top: 3;
     margin-bottom: 2em;
 }
 
 .apropos {
     background-color: var(--gray);
     padding:10px 0;
+}
+.apropos h2 {
+    font-size: 64px;
 }
 
 .video {
@@ -436,9 +455,12 @@ je met un display flex pour to*/
     cursor: pointer;
 }
 
-.studio-logo:hover {
+.studio-logo:active {
     animation: rotation 2s ease;
     animation-fill-mode: forwards;
+}
+.studio-logo:ended {
+    display: none;
 }
 
 
@@ -491,8 +513,31 @@ footer {
 
 
 @media screen and (min-width: 1012px) {
-    .mobile {
+    .external-link.mobile {
         display: none;
+    }
+
+    
+
+
+    /*-----------------------------------------------------------------------------------
+    SECTION GENERAL
+    -------------------------------------------------------------------------------------*/
+
+
+    p {
+        font-size: 32px
+    }
+
+    h1 {
+        font-size: 5em;
+    }
+
+
+
+    .img, .video {
+        width: 723px;
+        height: auto;
     }
 
 
@@ -533,11 +578,65 @@ footer {
 
     .signal-text  {
         display: block;
-    
+        width:1048px;
+    }
+
+
+    /*-------------------------------------------------------------------------------------
+    # SECTION: MAIN (ACCEUIL)
+    -------------------------------------------------------------------------------------*/
+    .section {
+        text-align:left;
+        align-items: flex-start;
+    }
+    .section.container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .apropos h2 {
+        padding-right:80vw;
+    }
+
+    .text {
+        width:50vw;
+        
+    }
+    .video {
+        width: 723px;
+        min-height: 486px;
+        align-self: center;
+        margin-bottom: 10vh;
     }
 
 
 
+    .detail .caroussel {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin-left: 10vw;
+    
+
+    }
+    .text-caroussel h2 {
+        font-size: 64px;
+    }
+
+    .text-caroussel p {
+        font-weight: 400;
+    }
+    .text-caroussel {
+        width: 50vh
+    }
+
+
+    .gallerie {
+        align-items: center;
+    }
+    .gallerie .img {
+        width: inherit;
+    }
 
 }
 
