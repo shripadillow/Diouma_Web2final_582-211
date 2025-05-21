@@ -638,5 +638,19 @@ footer {
         width: inherit;
     }
 
+
+
+
+    /*-------------------------------------------------------------------------------------
+    # SECTION: MAIN (STUDIO)
+    -------------------------------------------------------------------------------------*/
+    .section.studio.container {
+        flex-direction: row-reverse;
+    }
+
+    .studio-logo {
+        padding-right: 10vw;
+        transform: scale(1.6);
+    }
 }
 
